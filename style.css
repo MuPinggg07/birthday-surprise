@@ -1,0 +1,354 @@
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:"Sarabun",sans-serif;
+background:linear-gradient(120deg,#FFF7CD,#FDC3A1);
+color:#5a4a42;
+overflow-x:hidden;
+}
+
+/* BUTTON */
+
+button{
+font-family:"Sarabun",sans-serif;
+padding:12px 24px;
+border:none;
+border-radius:12px;
+cursor:pointer;
+background:#F57799;
+color:white;
+font-size:16px;
+transition:0.2s;
+}
+
+button:hover{
+background:#FB9B8F;
+transform:scale(1.05);
+}
+
+/* CENTER SCREEN */
+
+.center{
+height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+/* MODAL */
+
+.modal{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.4);
+display:flex;
+align-items:center;
+justify-content:center;
+opacity:0;
+visibility:hidden;
+transition:.3s;
+}
+
+.modal.active{
+opacity:1;
+visibility:visible;
+}
+
+.modal-box{
+background:#FFF7CD;
+padding:30px;
+border-radius:16px;
+max-width:400px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* SECTION */
+
+.section{
+display:none;
+padding:80px 20px;
+text-align:center;
+}
+
+.section.show{
+display:block;
+}
+
+/* HERO */
+
+.hero{
+font-size:48px;
+font-weight:bold;
+margin-bottom:40px;
+color:#F57799;
+}
+
+/* IMAGES */
+
+.image{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+
+display:block;
+margin:40px auto;
+
+width:90%;
+max-width:420px;
+
+border-radius:18px;
+object-fit:cover;
+
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.image:hover{
+transform:scale(1.03);
+}
+
+.image.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* VIDEO GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+max-width:900px;
+margin:auto;
+}
+
+.card{
+background:#FDC3A1;
+padding:15px;
+border-radius:12px;
+cursor:pointer;
+color:#5a4a42;
+transition:0.2s;
+}
+
+.card:hover{
+background:#FB9B8F;
+transform:translateY(-4px);
+}
+
+/* QUIZ */
+
+.quiz-question{
+margin:30px auto;
+max-width:500px;
+}
+
+.quiz-option{
+display:block;
+margin:8px 0;
+padding:10px;
+background:#FDC3A1;
+border-radius:8px;
+cursor:pointer;
+transition:0.2s;
+}
+
+.quiz-option:hover{
+background:#FB9B8F;
+}
+
+/* HEART FLOAT */
+
+.heart{
+position:fixed;
+bottom:-20px;
+font-size:20px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+from{transform:translateY(0)}
+to{transform:translateY(-110vh)}
+}
+
+.heart-img{
+width:28px;
+height:28px;
+border-radius:50%;
+object-fit:cover;
+}
+
+/* WRONG ANSWER POPUP */
+
+.wrong-popup{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+z-index:9999;
+animation:fadeOut 3s forwards;
+}
+
+.wrong-popup img{
+width:260px;
+border-radius:12px;
+}
+
+@keyframes fadeOut{
+0%{opacity:1}
+80%{opacity:1}
+100%{opacity:0}
+}
+
+/* ============================= */
+/* VIDEO CARDS */
+/* ============================= */
+
+.video-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+gap:20px;
+max-width:900px;
+margin:auto;
+padding:20px;
+}
+
+.video-card{
+background:white;
+border-radius:16px;
+padding:40px 20px;
+text-align:center;
+cursor:pointer;
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+transition:.25s;
+position:relative;
+}
+
+.video-card:hover{
+transform:translateY(-6px);
+box-shadow:0 15px 30px rgba(0,0,0,0.2);
+}
+
+.video-card p{
+margin-top:10px;
+font-weight:600;
+}
+
+/* play icon */
+
+.play-icon{
+font-size:40px;
+color:#F57799;
+}
+
+/* ============================= */
+/* VIDEO POPUP */
+/* ============================= */
+
+.video-popup{
+position:relative;
+max-width:90%;
+max-height:90%;
+padding:20px;
+}
+
+.video-popup video{
+width:100%;
+border-radius:12px;
+}
+
+.close-video{
+position:absolute;
+top:10px;
+right:15px;
+font-size:22px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.section{
+    max-width:1000px;
+    margin:120px auto;
+    text-align:center;
+}
+
+.image{
+    opacity:0;
+    transform:translateY(60px);
+    transition:all 1s ease;
+}
+
+.image.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.image img{
+    width:100%;
+    border-radius:20px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.25);
+}
+
+/* ============================= */
+/* MOBILE RESPONSIVE */
+/* ============================= */
+
+@media (max-width:768px){
+
+.hero{
+font-size:32px;
+}
+
+.section{
+padding:60px 15px;
+}
+
+.image{
+max-width:100%;
+}
+
+.quiz-question{
+max-width:100%;
+}
+
+button{
+font-size:15px;
+padding:10px 20px;
+}
+
+}
+
+/* มือถือเล็ก */
+
+@media (max-width:480px){
+
+.hero{
+font-size:26px;
+}
+
+.video-card{
+padding:30px 10px;
+}
+
+.play-icon{
+font-size:32px;
+}
+
+}
+
+@media (max-width:768px){
+
+.image{
+width:92%;
+max-width:340px;
+}
+
+}
